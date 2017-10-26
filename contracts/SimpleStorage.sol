@@ -3,8 +3,12 @@ pragma solidity ^0.4.2;
 contract SimpleStorage {
   uint storedData;
 
+
+  event ValueSet(uint x);
+
   function set(uint x) {
     storedData = x;
+    ValueSet(x);
   }
 
   function get() constant returns (uint) {
